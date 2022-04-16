@@ -7,17 +7,20 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Face Candy";
-const description = "Face Candy NFTs. Cool simplistic face designs";
+const namePrefix = "Catmaniaa.xyz";
+const description = "Cat NFTs. Cool simplistic character designs.";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
+    growEditionSizeTo: 80,
     layersOrder: [
-      { name: "Backgrounds" },
-      { name: "Skulls" },
+      { name: "background" },
+      { name: "skin" },
+      { name: "eyes" },
+      { name: "mouth" },
+      { name: "hats" },
     ],
   },
 ];
@@ -27,13 +30,13 @@ const shuffleLayerConfigurations = true;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
-  smoothing: false,
+  width: 3000,
+  height: 3000,
+  smoothing: true,
 };
 
 const extraMetadata = {
-  external_url: "https://codecats.xyz", // Replace with your website or remove this line if you do not have one.
+  external_url: "https://catmaniaa.xyz", // Replace with your website or remove this line if you do not have one.
 };
 
 // NFTPort Info
@@ -44,13 +47,13 @@ const LIMIT = 2; // Your API key rate limit
 const CHAIN = 'polygon'; // only rinkeby or polygon
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
-const CONTRACT_NAME = 'Face Candy';
-const CONTRACT_SYMBOL = 'FCAN';
+const CONTRACT_NAME = 'Catmaniaa';
+const CONTRACT_SYMBOL = 'CATMAN';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
 const OWNER_ADDRESS = '0x6351aC917bBC28d170344f512d36165867D9690C';
 const TREASURY_ADDRESS = '0x6351aC917bBC28d170344f512d36165867D9690C';
 const MAX_SUPPLY = 5000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
-const MINT_PRICE = 8; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
+const MINT_PRICE = 24; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
@@ -62,7 +65,7 @@ const ROYALTY_SHARE = 1000; // Percentage of the token price that goes to the ro
 const ROYALTY_ADDRESS = "0x6351aC917bBC28d170344f512d36165867D9690C"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
-const PRESALE_WHITELISTED_ADDRESSES = []; // only update if you want to manually set the whitelisted addresses
+const PRESALE_WHITELISTED_ADDRESSES = ["0x6351aC917bBC28d170344f512d36165867D9690C"]; // only update if you want to manually set the whitelisted addresses
 
 // ** OPTIONAL **
 let CONTRACT_ADDRESS = "0x572320D61a8CFa14D91608cFe3aBc361CA311f7c"; // If you want to manually include it
@@ -70,7 +73,7 @@ let CONTRACT_ADDRESS = "0x572320D61a8CFa14D91608cFe3aBc361CA311f7c"; // If you w
 // Generic Metadata is optional if you want to reveal your NFTs
 const GENERIC = true; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
 const GENERIC_TITLE = CONTRACT_NAME; // Replace with what you want the generic titles to say if you want it to be different from the contract name.
-const GENERIC_DESCRIPTION = "Which face will you get?"; // Replace with what you want the generic descriptions to say.
+const GENERIC_DESCRIPTION = "Which cat will you get?"; // Replace with what you want the generic descriptions to say.
 const GENERIC_IMAGE = "https://ipfs.io/ipfs/bafkreiasqehrg5n7svzgbhifknzbtrsre7y6b6wuqcp5k57lyexjibv5bu"; // Replace with your generic image that will display for all NFTs pre-reveal.
 
 // Automatically set contract address if deployed using the deployContract.js script
